@@ -690,7 +690,7 @@ export class ColumnMetadata {
             // because if its not virtual it means the user defined a real column for this relation
             // also we don't do it if column is inside a junction table
             if (!this.entityMetadata.isJunction && this.isVirtual && this.referencedColumn && this.referencedColumn.propertyName !== this.propertyName) {
-                if (!(this.propertyName in entity)) {
+                if (this.propertyName in entity) {
                     entity[this.propertyName] = {};
                 }
 
